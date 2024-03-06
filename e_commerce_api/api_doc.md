@@ -32,26 +32,26 @@ update goods reserve
 * endpoints: `/<good_id>/update`
 * authentication: required
 
-add to cart
+add good to cart
 * request method: PUT
 * endpoints: `/<user_id>/cart`
 * authentication: required
 
-remove from cart
+remove good from cart
 * request method: DELETE
-* endpoints: `/cart/<good_id>`
+* endpoints: `/<user_id>/cart/<good_id>`
 * authentication: required
 
 List shopping cart
 * request method: GET
-* endpoints: `/cart`
+* endpoints: `/<user_id>/cart`
 
-purchase
+checkout
 * request method: POST
-* endpoints: `/purchase`
+* endpoints: `/<user_id>/cart/checkout`
 * authentication: required
 
-generate receipt
-* request method: POST
-* endpoints: `/receipt`
+list orders
+* request method: GET
+* endpoints: `/<user_id>/orders`
 * authentication: required

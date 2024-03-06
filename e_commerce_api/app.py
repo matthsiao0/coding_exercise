@@ -2,13 +2,18 @@ from flask import Flask
 
 app = Flask(__name__)
 
-def goods():
-    pass
+g = {}
 
-def add_good():
-    pass
+@app.route('/goods')
+def list_goods():
+    return g
 
-def remove_good():
+@app.route('/launch')
+def launch_good():
+    return g
+
+@app.route('/discontinue')
+def discontinue_good():
     pass
 
 def update_reserve():

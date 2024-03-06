@@ -1,10 +1,9 @@
 # APIs
-list goods
+List goods
 * request method: GET
 * endpoints: `/goods`
-* authentication: required
 
-launch good
+Launch good
 * request method: POST
 * endpoints: `/launch`
 * authentication: required
@@ -22,32 +21,37 @@ launch good
     {"id": "<good_id>"}
 }
 ```
+
 discontinue good
 * request method: DELETE
-* endpoints: `/<good_id>/discontinue`
+* endpoints: `/discontinue`
 * authentication: required
 
-update reserve
-* request method: POST
-* endpoints: `/somewhere`
+update goods reserve
+* request method: PUT
+* endpoints: `/<good_id>/update`
 * authentication: required
 
 add to cart
-* request method: POST
-* endpoints: `/somewhere`
+* request method: PUT
+* endpoints: `/<user_id>/cart`
 * authentication: required
 
 remove from cart
-* request method: POST
-* endpoints: `/somewhere`
+* request method: DELETE
+* endpoints: `/cart/<good_id>`
 * authentication: required
+
+List shopping cart
+* request method: GET
+* endpoints: `/cart`
 
 purchase
 * request method: POST
-* endpoints: `/somewhere`
+* endpoints: `/purchase`
 * authentication: required
 
 generate receipt
 * request method: POST
-* endpoints: `/somewhere`
+* endpoints: `/receipt`
 * authentication: required

@@ -1,48 +1,48 @@
 # APIs
-List goods
+List products
 * request method: GET
-* endpoints: `/goods`
+* endpoints: `/products`
 
-Launch good
+Launch product
 * request method: POST
-* endpoints: `/launch`
+* endpoints: `/product`
 * authentication: required
 
 | name      | location   | type   | description           |
 | ------    | ---------- | ------ | -------------         |
-| goodsName | json       | str    | name of good(s)       |
-| price     | json       | int    | price for one good    |
+| productName | json       | str    | name of product(s)       |
+| price     | json       | int    | price for one product    |
 | reserve   | json       | int    |                       |
 | promotion | json       | str    | message for promotion |
 
 ```
 200 OK
 {
-    {"id": "<good_id>"}
+    {"id": "<product_id>"}
 }
 ```
 
-discontinue good
+discontinue product
 * request method: DELETE
-* endpoints: `/discontinue`
+* endpoints: `/product/<product_id>`
 * authentication: required
 
-update goods reserve
+update product reserve
 * request method: PUT
-* endpoints: `/goods/<good_id>/update`
+* endpoints: `/product/<product_id>`
 * authentication: required
 
-get good picture
+get product picture
 * request method: GET
-* endpoints: `/goods/<good_id>/picture`
+* endpoints: `/product/<product_id>/picture`
 * authentication: required
 
-add good to cart
-* request method: PUT
+add product to cart
+* request method: POST
 * endpoints: `/<user_id>/cart`
 * authentication: required
 
-remove good from cart
+remove product from cart
 * request method: DELETE
 * endpoints: `/<user_id>/cart/<good_id>`
 * authentication: required
@@ -53,7 +53,7 @@ List shopping cart
 
 checkout
 * request method: POST
-* endpoints: `/<user_id>/cart/checkout`
+* endpoints: `/<user_id>/cart`
 * authentication: required
 
 list orders

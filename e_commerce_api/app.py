@@ -25,9 +25,9 @@ def launch_good():
 @app.route('/discontinue', methods = ['DELETE'])
 def discontinue_good():
     if request.form['goods_id'] not in goods_list:
-        return make_response('', 403)
+        return make_response('', 400)
     goods_list.pop(request.form['goods_id'])
-    return make_response('', 204)
+    return make_response('', 200)
 
 @app.route('/<good_id>/update')
 def update_reserve():

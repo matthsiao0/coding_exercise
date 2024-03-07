@@ -29,7 +29,12 @@ discontinue good
 
 update goods reserve
 * request method: PUT
-* endpoints: `/<good_id>/update`
+* endpoints: `/goods/<good_id>/update`
+* authentication: required
+
+get good picture
+* request method: GET
+* endpoints: `/goods/<good_id>/picture`
 * authentication: required
 
 add good to cart

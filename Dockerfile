@@ -1,5 +1,6 @@
 FROM python:3.11
 
+ENV FLASK_APP=app.py
 RUN pip install flask
 
 # COPY /e_commerce_api/app.py /app/app.py

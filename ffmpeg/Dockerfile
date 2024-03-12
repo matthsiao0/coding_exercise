@@ -13,7 +13,6 @@ RUN     apt install curl --assume-yes && \
 RUN     curl https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.xz \
             -o ffmpeg.tar.xz
 
-RUN     ls
 RUN     tar -x -f ffmpeg.tar.xz
 
 RUN     cd ffmpeg-${FFMPEG_VERSION} && \

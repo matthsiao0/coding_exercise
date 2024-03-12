@@ -1,0 +1,36 @@
+services:
+  flask:
+    build: .
+    volumes:
+      - ./e_commerce_api:/app
+        # - .:/app
+    ports:
+      - "8000:8000"
+    command: flask run --host 0.0.0.0 --port 8000
+    environment:
+      FLASK_APP: app/app.py
+  ffmpeg:
+    build: ffmpeg/.
+    command: ffmpeg -i assets/sr.mp4 assets/sr1.m2v
+    volumes:
+    - ./ffmpeg:/assets
+
+  mqtt-broker:
+    image: eclipse-mosquitto:latest
+    volumes:
+    - ./mqtt/broker:/mqtt
+    ports:
+    - "1883:1883"
+    command: mosquitto -c mqtt/mosquitto.conf -v
+
+  mqtt-sub:
+    build: mqtt/client
+    volumes:
+    - ./mqtt/client:/mqtt/client
+    command: python3 /mqtt/client/single_subscribe.py
+
+  mqtt-pub:
+    build: mqtt/client
+    volumes:
+    - ./mqtt/client:/mqtt/client
+    command: python3 /mqtt/client/single_publish.py
